@@ -22,9 +22,6 @@ function Slider() {
     // Atualiza a imagem de fundo do body quando o slide muda
     useEffect(() => {
         document.body.style.backgroundImage = slides[currentIndex].background;
-        document.body.style.backgroundSize = 'cover';  // Garante que a imagem cubra toda a tela
-        document.body.style.backgroundPosition = 'center';  // Centraliza a imagem
-        document.body.style.backgroundAttachment = 'fixed';  // A imagem ficará fixa ao rolar
     }, [currentIndex]); // Efeito é acionado sempre que currentIndex mudar
 
     // Função para ir para o slide anterior
