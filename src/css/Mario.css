@@ -5,6 +5,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: default;
+    user-select: none;
 }
 
 .banner-mario {
@@ -15,24 +17,32 @@
     width: 100%;
     min-height: 100vh;
     flex-grow: 1;
-    /* overflow: hidden; */
-
-    /* overflow-y: scroll; */
-
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
+.banner-mario a {
+    text-decoration: none;
+}
+
 /* O banner dentro dos slides ocupa 100% da largura, tem altura mínima de 100vh, usa layout flexível para centralizar seu conteúdo horizontal e verticalmente. */
 
-.banner-mario img {
+.banner-mario .mario-image {
     position: absolute;
     max-width: 700px;
     transform: translateX(-50%);
     z-index: 1;
     top: 10%;
     left: 50%;
+}
+
+.banner-mario .mario-gif {
+    position: absolute;
+    max-width: 100px;
+    top: 65%;
+    left: 1%;
 }
 
 /* As imagens dentro do banner são centralizadas horizontalmente e têm largura máxima de 700px. */
@@ -43,23 +53,16 @@
 
 /* Define a altura máxima de 70% da viewport para os elementos com a classe 'right'. */
 
-.banner-mario img {
-    max-width: 790px;
-    max-height: 790px;
-    width: 50%;
-    height: 50%;
-}
-
-/* As imagens no banner têm largura e altura máximas de 790px e ocupam 50% do contêiner. */
-
 .banner-mario .left {
     /* border: 1px solid red; */
+    padding-left: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     margin-top: 110px;
     width: 100%;
     height: 80vh;
+    z-index: 10;
 }
 
 /* O conteúdo à esquerda do banner é exibido em uma coluna flexível, espaçado uniformemente. */
@@ -84,7 +87,7 @@
 .banner-mario .left .features .rating .score {
     padding: 15px;
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 600;
     color: var(--primary);
     background: #ffffff;
 }
@@ -108,12 +111,18 @@
     align-items: center;
 }
 
+.banner-mario .left .features .pricing .content {
+    /* border: 1px solid blue; */
+    margin-left: 100px;
+}
+
 /* A seção de preços é exibida com texto branco e layout flexível para alinhamento horizontal. */
 
 .banner-mario .left .features .content h4 {
     color: #ffffff;
-    font-size: 1.5em;
-    font-weight: 400;
+    padding: 10px 0;
+    font-size: 1.1em;
+    font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
@@ -121,9 +130,10 @@
 /* O título 'h4' dentro do conteúdo tem cor branca, tamanho de fonte 1.5em, peso de fonte 400, espaçamento entre letras de 2px e é exibido em maiúsculas. */
 
 .banner-mario .left .features .content span {
+    /* border: 1px solid purple; */
     font-size: 1em;
     font-weight: 600;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
     text-transform: uppercase;
 }
@@ -132,15 +142,18 @@
 
 .banner-mario .left .features .content .subtitle {
     color: var(--primary);
+    font-size: 1.2em;
+    font-weight: 800;
 }
 
 /* O subtítulo dentro do conteúdo de recursos tem a cor definida pela variável --primary (vermelha). */
 
 .banner-mario h1 {
     color: #ffffff;
-    font-size: 4em;
-    letter-spacing: 5px;
-    line-height: 0.9;
+    font-size: 2.9em;
+    letter-spacing: 3px;
+    margin-top: -50px;
+    /* line-height: 1; */
     z-index: 10;
     text-transform: uppercase;
     text-shadow: 5px 5px 5px rgba(0, 0, 0, 1);
@@ -152,7 +165,6 @@
     /* border: 1px solid green; */
     position: relative;
     max-height: 500px;
-    /* height: 100vh; */
     width: 450px;
     display: flex;
     flex-direction: column;
@@ -173,6 +185,9 @@
 
 .banner-mario .right .description li {
     list-style: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
 }
 
 /* Remove o estilo de lista dos itens de descrição à direita. */
@@ -198,13 +213,15 @@
 /* Os parágrafos na descrição têm margem superior de 5px e margem inferior de 25px, com peso de fonte leve (300). */
 
 .banner-mario .right h2 {
+    /* border: 1px solid red; */
     color: #ffffff;
     font-size: 3.5em;
     line-height: 1em;
-    font-weight: 400;
-    text-align: right;
-    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: end;
+    margin-bottom: 10px;
     text-transform: uppercase;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 1);
 }
 
 /* O título 'h2' à direita tem cor branca, fonte grande (3.5em), linha de altura 1em, peso de fonte 400, alinhamento à direita e margem inferior de 20px, e é exibido em maiúsculas. */
@@ -219,17 +236,29 @@
 
 
 @media(max-width: 1300px) {
-    
+    .banner-mario .mario-image {
+        max-width: 600px;
+        top: 15%;
+        left: 50%;
+    }
 }
 
 @media(max-width: 1200px) {
-    .banner-mario img {
-        display: none;
+    .banner-mario .mario-image {
+        max-width: 150px;
+        top: 35%;
+        left: 80%;
+    }
+
+    .banner-mario .mario-gif {
+        top: 35%;
+        left: 30%;
     }
 
     .banner-mario h1 {
         font-size: 3em;
         text-align: center;
+        margin-top: -120px;
     }
 
     .banner-mario {
@@ -244,6 +273,7 @@
 
     .banner-mario .left {
         width: 90%;
+        margin-top: 60px;
     }
 
     .banner-mario .left .features {
@@ -252,27 +282,24 @@
     }
 
     .banner-mario .left .features .pricing {
+        /* border: 1px solid purple; */
         justify-content: center;
     }
 
     .banner-mario .right {
+        /* max-height: 600px; */
         width: 90%;
-        height: 100vh;
+        /* height: 100vh; */
         margin-top: 0;
+        margin-bottom: 10px;
         flex-direction: row;
-    }
-
-    .banner-mario .right .description {
-        /* border: 1px solid yellow; */
-        transform: translateY(-270px);
-    }
-
-    .banner-mario .right .trailer {
-        transform: translateY(-220px);
+        align-items: center;
+        justify-content: center;
     }
 
     .banner-mario .right .trailer h2 {
         font-size: 2em;
+        text-align: center;
     }
 
     .banner-mario .right iframe {
@@ -282,30 +309,60 @@
 }
 
 @media(max-width: 900px) {
+    .banner-mario .mario-gif {
+        top: 30%;
+        left: 25%;
+    }
+
+    .banner-mario .mario-image {
+        top: 30%;
+        left: 85%;
+    }
+
     .banner-mario .right {
         flex-direction: column;
-        /* justify-content: center; */
-        align-items: center;
-    }
-
-    .banner-mario .right .description {
-        transform: translateY(0px);
-    }
-
-    .banner-mario .right .trailer {
-        transform: translateY(0px);
     }
 
 }
 
 @media(max-width: 740px) {
-    .banner-mario .right .description {
-        transform: translateY(0px);
+    .banner-mario .mario-gif {
+        top: 29%;
+        left: 20%;
     }
+
+    .banner-mario .mario-image {
+        display: none;
+    }
+
 }
 
 @media(max-width: 640px) {
-    .banner-mario .right .description {
-        transform: translateY(0px);
+    .banner-mario .mario-gif {
+        top: 32%;
+        left: 20%;
+    }
+
+    .banner-mario h1 {
+        margin-top: -80px;
+        font-size: 2.5em;
+    }
+}
+
+@media(max-width: 550px) {
+    .banner-mario .mario-gif {
+        display: none;
+    }
+}
+
+@media(max-width: 480px) {
+    .banner-mario .right {
+        margin-top: 60px;
+    }
+}
+
+@media(max-width: 430px) {
+    .banner-mario .right {
+        margin-top: 150px;
     }
 }
