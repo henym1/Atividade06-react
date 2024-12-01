@@ -1,0 +1,27 @@
+.footer {
+    /* background-color: red; */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.footer p {
+    color: #fff;
+}
+
+@media(max-width: 1200px) {
+    .footer {
+        position: relative;
+        top: 30%;
+    }
+}
+
+@media(max-width: 900px) {
+    .footer {
+        top: 55%;
+    }
+}

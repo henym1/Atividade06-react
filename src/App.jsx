@@ -1,6 +1,7 @@
-import './App.css'
+import './css/App.css'
 import Header from './Components/Header'
 import Slider from './Components/Slider'
+import Footer from './Components/Footer'
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
     <div className='App'>
       <Header />
       <Slider />
+      <Footer />
     </div>
   )
 }
