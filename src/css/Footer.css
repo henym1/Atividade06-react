@@ -20,8 +20,44 @@
     }
 }
 
+@media(max-width: 1120px) {
+    .footer {
+        top: 35%;
+    }
+}
+
 @media(max-width: 900px) {
     .footer {
-        top: 55%;
+        top: 60%;
+    }
+}
+
+@media(max-width: 680px) {
+    .footer {
+        top: 65%;
+    }
+}
+
+@media(max-width: 500px) {
+    .footer {
+        top: 70%;
+    }
+}
+
+@media(max-width: 480px) {
+    .footer {
+        top: 80%;
+    }
+}
+
+@media(max-width: 440px) {
+    .footer {
+        top: 90%;
+    }
+}
+
+@media(max-width: 420px) {
+    .footer {
+        top: 95%;
     }
 }
